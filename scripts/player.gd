@@ -2,6 +2,7 @@ extends Area2D
 signal hit
 
 var screen_size
+@export var paddle_speed = 200
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,6 +16,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
 	
-	position += velocity*100 * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
+	position += velocity * paddle_speed * delta
+	position = position.clamp(Vector2(15,25), Vector2(15,335))
 	

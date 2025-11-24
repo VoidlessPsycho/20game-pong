@@ -1,7 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://1pib1sbk7aln"]
+[gd_scene load_steps=8 format=3 uid="uid://1pib1sbk7aln"]
 
-[ext_resource type="Texture2D" path="res://assets/art/bkgd.png" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://bqaxrmqmpexkf" path="res://assets/bkgd.png" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://cbiwcwntpmk1o" path="res://scripts/player.gd" id="2_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://cg7o7hf5anqgk" path="res://assets/playerPaddle.png" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://bd246nudga3oq" path="res://assets/ball.png" id="3_jyhfs"]
+[ext_resource type="Script" uid="uid://ggwog2luiu7q" path="res://scenes/ball.gd" id="4_tbgi4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
+size = Vector2(10, 50)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
 
 [node name="Main" type="Sprite2D"]
 texture = ExtResource("1_o5qli")
 centered = false
+
+[node name="Player" type="Area2D" parent="."]
+position = Vector2(15, 170)
+script = ExtResource("2_jyhfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_sugp2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_tbgi4")
+
+[node name="Ball" type="Area2D" parent="."]
+position = Vector2(320, 170)
+script = ExtResource("4_tbgi4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball"]
+texture = ExtResource("3_jyhfs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource("CircleShape2D_tefeu")
