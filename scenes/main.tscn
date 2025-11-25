@@ -58,5 +58,3 @@ shape = SubResource("RectangleShape2D_tefeu")
 [node name="LeftBorder" type="CollisionShape2D" parent="Borders"]
 position = Vector2(-10, 180)
 shape = SubResource("RectangleShape2D_o6xl0")
-
-[connection signal="area_entered" from="Borders" to="Ball" method="_on_borders_area_entered"]
