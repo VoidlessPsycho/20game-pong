@@ -14,3 +14,7 @@ func _physics_process(delta):
 	var collision_info = move_and_collide(velocity * delta)
 	if collision_info:
 		velocity = velocity.bounce(collision_info.get_normal())
+
+
+func _on_borders_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.

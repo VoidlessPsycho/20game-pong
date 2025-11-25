@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cbiwcwntpmk1o" path="res://scripts/player.gd" id="2_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://cg7o7hf5anqgk" path="res://assets/playerPaddle.png" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://bd246nudga3oq" path="res://assets/ball.png" id="3_jyhfs"]
-[ext_resource type="Script" uid="uid://ggwog2luiu7q" path="res://scenes/ball.gd" id="4_tbgi4"]
+[ext_resource type="Script" uid="uid://ggwog2luiu7q" path="res://scripts/ball.gd" id="4_tbgi4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
 size = Vector2(10, 50)
@@ -41,7 +41,7 @@ texture = ExtResource("3_jyhfs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
 shape = SubResource("CircleShape2D_tefeu")
 
-[node name="Borders" type="StaticBody2D" parent="."]
+[node name="Borders" type="Area2D" parent="."]
 
 [node name="RightBorder" type="CollisionShape2D" parent="Borders"]
 position = Vector2(650, 180)
@@ -58,3 +58,5 @@ shape = SubResource("RectangleShape2D_tefeu")
 [node name="LeftBorder" type="CollisionShape2D" parent="Borders"]
 position = Vector2(-10, 180)
 shape = SubResource("RectangleShape2D_o6xl0")
+
+[connection signal="area_entered" from="Borders" to="Ball" method="_on_borders_area_entered"]
