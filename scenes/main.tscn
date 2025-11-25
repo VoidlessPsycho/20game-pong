@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://1pib1sbk7aln"]
+[gd_scene load_steps=10 format=3 uid="uid://1pib1sbk7aln"]
 
 [ext_resource type="Texture2D" uid="uid://bqaxrmqmpexkf" path="res://assets/bkgd.png" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://cbiwcwntpmk1o" path="res://scripts/player.gd" id="2_jyhfs"]
@@ -11,6 +11,9 @@ size = Vector2(10, 50)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6xl0"]
+size = Vector2(20, 360)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tefeu"]
 size = Vector2(640, 20)
 
@@ -18,7 +21,7 @@ size = Vector2(640, 20)
 texture = ExtResource("1_o5qli")
 centered = false
 
-[node name="Player" type="Area2D" parent="."]
+[node name="Player" type="StaticBody2D" parent="."]
 position = Vector2(15, 170)
 script = ExtResource("2_jyhfs")
 
@@ -38,12 +41,20 @@ texture = ExtResource("3_jyhfs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
 shape = SubResource("CircleShape2D_tefeu")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Borders" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="RightBorder" type="CollisionShape2D" parent="Borders"]
+position = Vector2(650, 180)
+shape = SubResource("RectangleShape2D_o6xl0")
+
+[node name="BottomBorder" type="CollisionShape2D" parent="Borders"]
 position = Vector2(320, 370)
 shape = SubResource("RectangleShape2D_tefeu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="TopBorder" type="CollisionShape2D" parent="Borders"]
 position = Vector2(320, -10)
 shape = SubResource("RectangleShape2D_tefeu")
+
+[node name="LeftBorder" type="CollisionShape2D" parent="Borders"]
+position = Vector2(-10, 180)
+shape = SubResource("RectangleShape2D_o6xl0")

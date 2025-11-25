@@ -1,4 +1,4 @@
-extends Area2D
+extends PhysicsBody2D
 signal hit
 
 var screen_size
