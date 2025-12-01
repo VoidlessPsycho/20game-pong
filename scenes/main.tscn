@@ -41,10 +41,14 @@ texture = ExtResource("3_jyhfs")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
 shape = SubResource("CircleShape2D_tefeu")
 
-[node name="Borders" type="Area2D" parent="."]
+[node name="Borders" type="StaticBody2D" parent="."]
 
 [node name="RightBorder" type="CollisionShape2D" parent="Borders"]
 position = Vector2(650, 180)
+shape = SubResource("RectangleShape2D_o6xl0")
+
+[node name="LeftBorder" type="CollisionShape2D" parent="Borders"]
+position = Vector2(-10, 180)
 shape = SubResource("RectangleShape2D_o6xl0")
 
 [node name="BottomBorder" type="CollisionShape2D" parent="Borders"]
@@ -54,7 +58,3 @@ shape = SubResource("RectangleShape2D_tefeu")
 [node name="TopBorder" type="CollisionShape2D" parent="Borders"]
 position = Vector2(320, -10)
 shape = SubResource("RectangleShape2D_tefeu")
-
-[node name="LeftBorder" type="CollisionShape2D" parent="Borders"]
-position = Vector2(-10, 180)
-shape = SubResource("RectangleShape2D_o6xl0")
