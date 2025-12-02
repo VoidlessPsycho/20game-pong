@@ -1,5 +1,4 @@
 extends PhysicsBody2D
-signal hit
 
 var screen_size
 @export var paddle_speed = 200
@@ -18,4 +17,6 @@ func _process(delta: float) -> void:
 	
 	position += velocity * paddle_speed * delta
 	position = position.clamp(Vector2(15,25), Vector2(15,335))
+	
+	
 	

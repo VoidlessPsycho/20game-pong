@@ -1,6 +1,7 @@
 extends PhysicsBody2D	
 var velocity : Vector2
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	velocity.x = -250
@@ -14,3 +15,8 @@ func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
+	
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	pass # Replace with function body.
