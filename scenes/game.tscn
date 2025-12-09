@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://4otd2lo6al88"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_8cj0n"]
+
+[sub_resource type="MeshTexture" id="MeshTexture_uwrxv"]
+
+[node name="Game" type="Node2D"]
+
+[node name="PlayerOne" type="Area2D" parent="."]
+
+[node name="ColorRect" type="MeshInstance2D" parent="PlayerOne"]
+position = Vector2(10, 40)
+scale = Vector2(15.082, 40)
+mesh = SubResource("QuadMesh_8cj0n")
+texture = SubResource("MeshTexture_uwrxv")
